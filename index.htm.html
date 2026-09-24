@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Etsy Fee Calculator 2026: See Exactly What You Keep Per Sale</title>
+<meta name="description" content="Free Etsy fee calculator. Enter your price and shipping to see listing, transaction, payment processing and Offsite Ads fees, your profit, and the price you need to hit your target.">
+<link rel="canonical" href="https://YOUR-SITE-URL/">
+<meta property="og:title" content="Etsy Fee Calculator 2026">
+<meta property="og:description" content="See every Etsy fee on one sale and the price you need to reach your profit goal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How much does Etsy take from each sale?","acceptedAnswer":{"@type":"Answer","text":"On a typical US sale Etsy charges a $0.20 listing fee, a 6.5% transaction fee and 3% + $0.25 payment processing. That is roughly 10% of the order total before any advertising fees."}},
+{"@type":"Question","name":"Does the Etsy transaction fee apply to shipping?","acceptedAnswer":{"@type":"Answer","text":"Yes. The 6.5% transaction fee is charged on the item price plus the shipping and gift wrapping the buyer pays."}},
+{"@type":"Question","name":"When is the Etsy listing fee charged again?","acceptedAnswer":{"@type":"Answer","text":"The $0.20 listing fee is charged when you publish a listing, when it renews after four months, and when a multi-quantity listing sells."}},
+{"@type":"Question","name":"What are Etsy Offsite Ads fees?","acceptedAnswer":{"@type":"Answer","text":"Offsite Ads fees apply only to orders that come from an Etsy ad on another site. The rate is 15% of the order total, or 12% for shops with over $10,000 in yearly sales, capped at $100 per order."}}
+]}
+</script>
+<style>
+:root{--bg:#e9eef2;--ink:#17212b;--mute:#54626f;--paper:#fff;--line:#c9d3db;--keep:#0b6b5c;--fee:#a63d2a;--accent:#17212b}
+*{box-sizing:border-box}
+html{scroll-padding-top:12px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px 56px}
+h1,h2{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;letter-spacing:-.02em;margin:0}
+h1{font-size:clamp(2rem,6vw,3.4rem);max-width:16ch}
+h2{font-size:1.55rem;margin:44px 0 12px}
+.lede{color:var(--mute);max-width:56ch;margin:14px 0 26px}
+.grid{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:820px){.grid{grid-template-columns:1fr 1.05fr;align-items:start}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px}
+label{display:block;font-size:.9rem;font-weight:600;margin:14px 0 5px}
+label:first-child{margin-top:0}
+input,select{width:100%;font:500 1.05rem "IBM Plex Mono",ui-monospace,monospace;padding:11px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink)}
+input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #2b7fff;outline-offset:1px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chk{display:flex;gap:10px;align-items:flex-start;font-weight:500;margin-top:16px}
+.chk input{width:22px;height:22px;margin-top:2px;accent-color:var(--keep)}
+details{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+summary{cursor:pointer;font-weight:600}
+.receipt{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.95rem;padding:22px 20px 26px;border-radius:10px 10px 0 0;
+ -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%}
+.row{display:flex;justify-content:space-between;gap:12px;padding:5px 0}
+.row span:first-child{color:var(--mute)}
+.row.fee span:last-child{color:var(--fee)}
+.rule{border-top:1px dashed var(--line);margin:8px 0}
+.big{font-family:"Bricolage Grotesque",sans-serif;font-size:2.6rem;font-weight:700;color:var(--keep);line-height:1;margin:2px 0 4px;letter-spacing:-.03em;word-break:break-all}
+.big.neg{color:var(--fee)}
+.sub{color:var(--mute);font-size:.85rem;margin-bottom:10px}
+.res{background:#f0f6f4;border:1px solid #b8d8d0;border-radius:8px;padding:14px;margin-top:14px;font-weight:500}
+.res b{font:700 1.5rem "Bricolage Grotesque",sans-serif;color:var(--keep)}
+.prose{max-width:66ch}
+.prose p{margin:0 0 14px}
+.faq details{border-top:1px solid var(--line);padding:14px 0;margin:0}
+.faq p{margin:8px 0 0;color:var(--mute)}
+.note{font-size:.85rem;color:var(--mute);margin-top:40px;border-top:1px solid var(--line);padding-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>Etsy fee calculator</h1>
+<p class="lede">Enter a price and shipping to see every Etsy fee on one sale, what lands in your account, and your real profit. Fees follow the 2026 US rates; change them below for other countries.</p>
+</header>
+
+<main>
+<div class="grid">
+<section class="card" aria-label="Calculator inputs">
+<div class="two">
+<div><label for="cur">Currency</label>
+<select id="cur"><option>$</option><option>£</option><option>€</option><option>A$</option><option>C$</option></select></div>
+<div><label for="price">Item price</label><input id="price" inputmode="decimal" value="30"></div>
+</div>
+<div class="two">
+<div><label for="ship">Shipping the buyer pays</label><input id="ship" inputmode="decimal" value="5"></div>
+<div><label for="cost">Your item cost</label><input id="cost" inputmode="decimal" value="8"></div>
+</div>
+<label for="shipcost">Postage you actually pay</label><input id="shipcost" inputmode="decimal" value="4.50">
+<label class="chk"><input type="checkbox" id="ads"><span>This order came from an Etsy Offsite Ad</span></label>
+<details>
+<summary>Change fee rates</summary>
+<label for="preset">Payment processing region</label>
+<select id="preset"><option value="us">United States (3% + 0.25)</option><option value="uk">United Kingdom (4% + 0.20)</option><option value="custom">Custom</option></select>
+<div class="two">
+<div><label for="tx">Transaction %</label><input id="tx" inputmode="decimal" value="6.5"></div>
+<div><label for="listing">Listing fee</label><input id="listing" inputmode="decimal" value="0.20"></div>
+<div><label for="pp">Processing %</label><input id="pp" inputmode="decimal" value="3"></div>
+<div><label for="pf">Processing fixed</label><input id="pf" inputmode="decimal" value="0.25"></div>
+</div>
+<label for="adp">Offsite Ads %</label>
+<select id="adp"><option value="15">15% (under $10k a year)</option><option value="12">12% ($10k or more a year)</option></select>
+</details>
+</section>
+
+<section aria-label="Fee breakdown" aria-live="polite">
+<div class="card receipt" id="receipt">
+<div class="sub">You keep after Etsy fees and your costs</div>
+<div class="big" id="profit">0</div>
+<div class="sub" id="margin"></div>
+<div class="rule"></div>
+<div class="row"><span>Item price</span><span id="r-price"></span></div>
+<div class="row"><span>Shipping charged</span><span id="r-ship"></span></div>
+<div class="row"><span>Order total</span><span id="r-total"></span></div>
+<div class="rule"></div>
+<div class="row fee"><span>Listing fee</span><span id="r-list"></span></div>
+<div class="row fee"><span>Transaction fee</span><span id="r-tx"></span></div>
+<div class="row fee"><span>Payment processing</span><span id="r-pp"></span></div>
+<div class="row fee"><span>Offsite Ads fee</span><span id="r-ads"></span></div>
+<div class="row"><span>Total Etsy fees</span><span id="r-fees"></span></div>
+<div class="row"><span>Fees as % of order</span><span id="r-eff"></span></div>
+<div class="rule"></div>
+<div class="row"><span>Paid out by Etsy</span><span id="r-net"></span></div>
+<div class="row"><span>Item cost + postage</span><span id="r-costs"></span></div>
+</div>
+</section>
+</div>
+
+<section class="card" style="margin-top:18px">
+<h2 style="margin-top:0">What price should I charge?</h2>
+<p class="prose" style="margin-top:8px">Uses the costs, shipping and rates above. Enter the profit you want per sale.</p>
+<label for="target">Target profit per sale</label>
+<input id="target" inputmode="decimal" value="10" style="max-width:220px">
+<div class="res" id="tp"></div>
+</section>
+
+<section class="prose">
+<h2>How Etsy fees work</h2>
+<p>Etsy does not charge one fee. Each sale can carry up to four charges, and they stack. That is why a $30 sale can pay out closer to $26 before you count materials and postage.</p>
+<p><strong>Listing fee.</strong> $0.20 for each listing. You pay it again when the listing renews after four months and when a multi-quantity listing sells.</p>
+<p><strong>Transaction fee.</strong> 6.5% of the item price plus shipping and gift wrapping. Many new sellers miss that shipping is included.</p>
+<p><strong>Payment processing.</strong> In the US it is 3% plus $0.25 on the order total. Other countries have different rates, which is why you can edit them in the calculator.</p>
+<p><strong>Offsite Ads.</strong> Only when the buyer came through an Etsy ad on another site. It is 15% of the order (12% for shops over $10,000 a year), capped at $100 per order. Once your shop is above the threshold, the ads are required.</p>
+<h2>How to price so you still profit</h2>
+<p>Work backwards. Add your item cost, real postage and the profit you want, then add the fees. The tool above does this for you. If you offer free shipping, add the postage into the item price, because the 6.5% fee will apply to it either way.</p>
+</section>
+
+<section class="prose faq">
+<h2>Frequently asked questions</h2>
+<details><summary>How much does Etsy take from each sale?</summary><p>On a typical US sale Etsy charges a $0.20 listing fee, a 6.5% transaction fee and 3% + $0.25 payment processing. That is roughly 10% of the order total before any advertising fees.</p></details>
+<details><summary>Does the Etsy transaction fee apply to shipping?</summary><p>Yes. The 6.5% transaction fee is charged on the item price plus the shipping and gift wrapping the buyer pays.</p></details>
+<details><summary>When is the Etsy listing fee charged again?</summary><p>The $0.20 listing fee is charged when you publish a listing, when it renews after four months, and when a multi-quantity listing sells.</p></details>
+<details><summary>What are Etsy Offsite Ads fees?</summary><p>Offsite Ads fees apply only to orders that come from an Etsy ad on another site. The rate is 15% of the order total, or 12% for shops with over $10,000 in yearly sales, capped at $100 per order.</p></details>
+</section>
+</main>
+
+<p class="note">Rates last checked September 2026. Etsy can change its fees at any time, so confirm on Etsy's own seller fee page before you set prices. Sales tax and VAT are not included. This site is not affiliated with Etsy.</p>
+</div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var P={us:[3,0.25],uk:[4,0.20]};
+function n(id){var v=parseFloat(String($(id).value).replace(',','.'));return isFinite(v)&&v>=0?v:0}
+function m(x){var s=$('cur').value,neg=x<0;return (neg?'-':'')+s+Math.abs(x).toFixed(2)}
+function set(id,t){$(id).textContent=t}
+function calc(){
+ var price=n('price'),ship=n('ship'),cost=n('cost'),sc=n('shipcost');
+ var tx=n('tx')/100,pp=n('pp')/100,pf=n('pf'),lf=n('listing'),ap=parseFloat($('adp').value)/100;
+ var total=price+ship;
+ var fTx=total*tx,fPp=total>0?total*pp+pf:0;
+ var fAds=$('ads').checked?Math.min(total*ap,100):0;
+ var fees=lf+fTx+fPp+fAds,net=total-fees,profit=net-cost-sc;
+ set('r-price',m(price));set('r-ship',m(ship));set('r-total',m(total));
+ set('r-list','-'+m(lf));set('r-tx','-'+m(fTx));set('r-pp','-'+m(fPp));set('r-ads',fAds?'-'+m(fAds):m(0));
+ set('r-fees','-'+m(fees));set('r-eff',total?(fees/total*100).toFixed(1)+'%':'0%');
+ set('r-net',m(net));set('r-costs','-'+m(cost+sc));
+ set('profit',m(profit));$('profit').className='big'+(profit<0?' neg':'');
+ set('margin',total?'Profit margin '+(profit/total*100).toFixed(1)+'% of the order total':'');
+ var rates=tx+pp+($('ads').checked?ap:0),tp=n('target');
+ var need=(cost+sc+tp+lf+pf)/(1-rates)-ship;
+ $('tp').innerHTML='List the item at <b>'+m(need)+'</b> with '+m(ship)+' shipping to keep '+m(tp)+' profit.'
+  +($('ads').checked?' (Offsite Ads cap not applied here.)':'');
+}
+$('preset').addEventListener('change',function(){var p=P[this.value];if(p){$('pp').value=p[0];$('pf').value=p[1]}calc()});
+['pp','pf'].forEach(function(i){$(i).addEventListener('input',function(){$('preset').value='custom'})});
+document.querySelectorAll('input,select').forEach(function(e){e.addEventListener('input',calc);e.addEventListener('change',calc)});
+calc();
+})();
+</script>
+</body>
+</html>
